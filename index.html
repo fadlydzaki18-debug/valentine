@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>valentines dayyy</title>
+    <link rel="stylesheet" href="jarasayang.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <audio id="bgMusic" loop>
+        <source id="musicSource" src="Bruno_Mars_-_Count_on_Me_Official_Lyric_Video_256kbps.webm". type="audio/mpeg">
+        <source id="musicSource" src="Made_In_Japan_48kbps.mp4". type="audio/mpeg">
+    </audio>
+
+    <div id="petal-container"></div>
+dxbv
+    <section id="slide1" class="slide active">
+        <div class="card">
+            
+            <h1>alo cayang</h1>
+            <p>i fadly dzaki sebagai pembuat web inih mw ngasih liat km cewe yang paling cantikkkk seduniaa, sebelum itu km ngerjain minegames dlu okei!</p>
+            <button onclick="startExperience()">lets gooooo</button>
+        </div>
+    </section>
+
+   <section id="slide-games" class="slide">
+        <div class="card">
+            <h2 id="game-title">Game 1</h2>
+            <p id="game-desc">Tangkap 5 hati!</p>
+            <div class="game-box">
+                <div id="g1" class="game-layer active"><div id="heart-target" onclick="hitHeart()">❤️</div></div>
+                <div id="g2" class="game-layer">
+                    <div class="mem-grid">
+                        <div class="mem-btn" id="m0" onclick="memClick(0)"></div>
+                        <div class="mem-btn" id="m1" onclick="memClick(1)"></div>
+                        <div class="mem-btn" id="m2" onclick="memClick(2)"></div>
+                    </div>
+                    <button onclick="playMem()">Lihat Urutan</button>
+                </div>
+                <div id="g3" class="game-layer">
+                    <p style="font-size: 0.8rem; margin-bottom: 10px;">Cari Hati ❤️ di balik kotak!</p>
+                    <div class="mem-grid">
+                        <div class="mem-btn" onclick="checkTreasure(this, false)">?</div>
+                        <div class="mem-btn" onclick="checkTreasure(this, true)">?</div>
+                        <div class="mem-btn" onclick="checkTreasure(this, false)">?</div>
+                    </div>
+                </div>
+            </div>
+       
+            <div id="password-section" style="display:none;">
+                <input type="password" id="passInput" placeholder="tanggal lahir u (6 nomor)">
+                <button onclick="checkPass()">buka album</button>
+            </div>
+        </div>
+    </section>
+
+   <section id="slide-album" class="slide">
+    <div class="card" style="max-width: 500px; width: 90%;">
+        <h2 class="dancing" style="font-size: 2.5rem; margin-bottom: 20px; color: #ff4d6d;">Our Memory</h2>
+        
+        <div id="album-display" class="album-grid">
+            </div>
+
+        <button id="btnNextAlbum" style="margin-top: 25px;" onclick="nextSlide('slide-quiz')">Lanjut ✨</button>
+    </div>
+</section>
+
+    <section id="slide-quiz" class="slide">
+        <div class="card">
+            <div id="q1">
+                <p>km sayang ak g</p>
+                <div class="quiz-options">
+                    <button onclick="ansQ1()">yes babe</button>
+                    <button id="noBtn" onmouseover="moveNo()">g</button>
+                </div>
+            </div>
+            <div id="q2" style="display:none;">
+                <p>i tau km dari mana yah</p>
+                <div class="quiz-options">
+                    <button onclick="showPasha()">dri teman COWO km</button>
+                    <button onclick="alert('gwak')">tempat ngaji kitah (shoutout to ust aslam)</button>
+                </div>
+                <div id="pasha-opt" style="display:none; margin-top:10px;">
+                    <button onclick="ansQ2()">pasha jii</button>
+                </div>
+            </div>
+            <div id="q3" style="display:none;">
+                <p>kapan pertama kali kitah french kiss (kgn) langsung ajak ak ewe abis km uda selesaiin web ini yac</p>
+                <div class="quiz-options">
+                    <button onclick="nextSlide('slide-wish')">blue beetle date</button>
+                    <button onclick="alert('IH KITA GAK JADI NONTON INI Y, km selingkuh kan, ngaku')">spiderverse date</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="slide-wish" class="slide">
+        <div class="card">
+            <h2 class="dancing">wish jarrr</h2>
+            <p style="font-size: 0.8rem;">pencet untuk harapan kita kedepannyaaaa</p>
+            <div id="jar" onclick="openJar()" style="font-size: 5rem; cursor: pointer;">🫙</div>
+            <div id="wish-text" style="color: #ff4d6d; font-weight: bold; margin-top: 10px; min-height: 40px;"></div>
+            <button id="btnNextLetter" style="display:none; margin-top: 20px;" onclick="startLetter()">bacaaaa</button>
+        </div>
+    </section>
+
+    <section id="slide-letter" class="slide">
+        <div class="card">
+            <h2 class="dancing">untuk my loml</h2>
+            <div id="typewriter" style="font-size: 0.9rem; text-align: left; line-height: 1.6; margin: 15px 0;"></div>
+            <button id="btnFinal" style="display:none;" onclick="nextSlide('slide-final')">penutupannnnn</button>
+        </div>
+    </section>
+
+    <section id="slide-final" class="slide">
+        <div class="card">
+            <h1 class="dancing">I Love You! </h1>
+            <p>udaaaa selesaii, otw buat bunga dan bonekanyaaaaaaa, happy valentineeeeeee</p>
+ <button onclick="nextSlide('slide-finale')">
+            liat inih
+        </button>
+    </div>
+</section>
+
+<section id="slide-finale" class="slide">
+    <div class="card" style="max-width: 450px; width: 90%;">
+        <h2 class="dancing" style="font-size: 2.2rem; color: #ff4d6d;">A Gift For You</h2>
+        <p style="font-size: 0.8rem; margin-bottom: 20px;">Satu foto favorit kita, simpan ya sayang! ❤️</p>
+        
+        <div class="final-photo-container">
+            <img src="fadlyjara.jpeg" id="photoToDownload" alt="Our Special Moment">
+        </div>
+
+        <div style="margin-top: 20px;">
+            <a href="fadlyjara.jpeg" download="Momen-Terindah-Kita.jpg" class="btn-download">
+                Download Foto 📥
+            </a>
+        </div>
+
+        <p style="font-size: 0.7rem; margin-top: 30px; opacity: 0.6;">I Love You More Than Anything.</p>
+    </div>
+</section>
+ <script src="jarasayang.js"></script>
+</body>
+</html>
